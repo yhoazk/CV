@@ -1,0 +1,12 @@
+new_git_repository(
+    name="opencv_repo",
+    remote="https://github.com/opencv/opencv.git",
+    tag="4.0.0",
+    build_file_content = """
+    cc_library(
+      name = "opencv_cpp",
+      # TODO
+    )
+    """,
+    )
+
