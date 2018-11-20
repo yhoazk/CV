@@ -1,11 +1,16 @@
+load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository", "new_git_repository")
+
+
 new_git_repository(
     name="opencv_repo",
     remote="https://github.com/opencv/opencv.git",
     tag="4.0.0",
+    #shallow_since = "2018-10-10",
     build_file_content = """
     cc_library(
       name = "opencv_cpp",
-      # TODO
+      srcs = [glob("**/*.cpp")],
+      hdrs = [glob("**/*.hpp")]
     )
     """,
     )
